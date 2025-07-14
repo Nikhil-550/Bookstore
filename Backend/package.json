@@ -4,12 +4,25 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"  // Added 'node' to run the 'index.js' file with Node.js
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikhil-550/Bookstore.git"
   },
   "author": "Nikhil",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikhil-550/Bookstore/issues"
+  },
+  "homepage": "https://github.com/Nikhil-550/Bookstore#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.3",
+    "nodemon": "^3.1.10"
   }
 }
