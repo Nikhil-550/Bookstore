@@ -17,7 +17,7 @@ function Login() {
       password: data.password,
     };
     await axios
-      .post("http://localhost:4001/user/login", userInfo)
+      .post(`${process.env.REACT_APP_API_URL}/user/login`, userInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Logged in Successfully");
