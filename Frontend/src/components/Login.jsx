@@ -11,13 +11,16 @@ function Login() {
     formState: { errors },
   } = useForm();
 
+   // ✅ Access Vite environment variable
+  const apiUrl = import.meta.env.VITE_BASE_URL;
+
   const onSubmit = async (data) => {
     const userInfo = {
       email: data.email,
       password: data.password,
     };
     await axios
-      .post(`${process.env.REACT_APP_API_URL}/user/login`, userInfo)
+      .post(`${apiUrl}/user/login`, userInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Logged in Successfully");

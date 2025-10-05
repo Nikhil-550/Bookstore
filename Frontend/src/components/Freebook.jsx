@@ -9,11 +9,15 @@ import axios from "axios";
 import Cards from "./Cards";
 function Freebook() {
   const [book, setBook] = useState([]);
+
+    // ✅ Access Vite environment variable
+  const apiUrl = import.meta.env.VITE_BASE_URL;
+
   useEffect(() => {
     const getBook = async () => {
       try {
-        const API_URL = process.env.REACT_APP_API_URL;
-        const res = await axios.get(`${API_URL}/book`);
+        
+        const res = await axios.get(`${apiUrl}/book`);
 
         const data = res.data.filter((data) => data.category === "Free");
         console.log(data);

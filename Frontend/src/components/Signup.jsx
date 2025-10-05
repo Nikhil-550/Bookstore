@@ -16,6 +16,9 @@ function Signup() {
     formState: { errors },
   } = useForm();
 
+  const apiUrl = import.meta.env.VITE_BASE_URL;
+
+
   const onSubmit = async (data) => {
     const userInfo = {
       fullname: data.fullname,
@@ -23,7 +26,7 @@ function Signup() {
       password: data.password,
     };
     await axios
-      .post(`${process.env.REACT_APP_API_URL}/user/signup`, userInfo)
+      .post(`${apiUrl}/user/signup`, userInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Signup Successfully");
